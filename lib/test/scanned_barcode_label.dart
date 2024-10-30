@@ -38,7 +38,7 @@ class _ScannedBarcodeLabelState extends State<ScannedBarcodeLabel> {
 
         // Check if it matches the specific URL and is different from the last scanned value
         if (currentDisplayValue != null &&
-            currentDisplayValue.contains('https://lpgassociation.pmpframe.com') &&
+            currentDisplayValue.contains('https://tlda.org.in/api/') &&
             currentDisplayValue != lastScannedValue) {
 
           // Update the last scanned value

@@ -14,6 +14,7 @@ import '../../test/my_scanner.dart';
 import '../../utils/app_assets.dart';
 import '../../utils/app_color.dart';
 import '../after_scanning_page/after_scanning_ui.dart';
+import '../show_attendance/show_attendance.dart';
 
 class ScanningScreen extends StatefulWidget {
   const ScanningScreen({super.key});
@@ -193,6 +194,10 @@ class _ScanningScreenState extends State<ScanningScreen> {
             padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1),
             child: _build_buttons(),
           ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.1, vertical: 25),
+            child: _build_button_show_attendance(),
+          ),
           // _buildItem(
           //   context,
           //   'Analyze image from file',
@@ -231,6 +236,29 @@ class _ScanningScreenState extends State<ScanningScreen> {
         padding: EdgeInsets.symmetric(vertical: 15),
         child: Text(
           'Scan QR Code',
+          style: TextStyle(fontSize: 18, color: Colors.white),
+        ),
+      ),
+    );
+  }
+
+  Widget _build_button_show_attendance() {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const ShowAttendance(),
+          ),
+        );
+      },
+      style: ElevatedButton.styleFrom(
+          backgroundColor: AppColor.instance().red,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12))),
+      child: const Padding(
+        padding: EdgeInsets.symmetric(vertical: 15),
+        child: Text(
+          'Show Attendance',
           style: TextStyle(fontSize: 18, color: Colors.white),
         ),
       ),

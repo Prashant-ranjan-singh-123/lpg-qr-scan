@@ -20,7 +20,7 @@ class SplashScreenCubit extends Cubit<SplashScreenState> {
         .pushReplacement(MaterialPageRoute(builder: (context) =>
         BlocProvider(
           create: (context) => ScanningScreenCubit(),
-          child: ScanningScreen(),
+          child: const ScanningScreen(),
         )));
   }
 }

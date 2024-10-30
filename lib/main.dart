@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:lpg_qr/screens/after_scanning_page/after_scanning_ui.dart';
 import 'package:lpg_qr/screens/splash_screen/splash_screen_ui.dart';
 
 import 'screens/splash_screen/splash_screen_cubit.dart';
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: BlocProvider(
         create: (context) => SplashScreenCubit(),
-        child: const SplashScreenUi(),
+        // child: AfterScanningUi(url: 'https://lpgassociation.pmpframe.com/MjA1',),
+        child: SplashScreenUi(),
       ),
       debugShowCheckedModeBanner: false,
     );
